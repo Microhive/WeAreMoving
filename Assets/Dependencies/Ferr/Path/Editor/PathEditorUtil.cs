@@ -108,7 +108,7 @@ namespace Ferr {
 				_vMode = false;
 				Event.current.Use();
 			}
-			bool deleteMode = Event.current.alt;
+			bool deleteMode = Event.current.command;
 			
 			// draw all the curve and handle lines
 			if (Event.current.type == EventType.Repaint)
