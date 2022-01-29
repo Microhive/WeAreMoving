@@ -15,6 +15,7 @@ public class ChickFollowMovement : MonoBehaviour
     float horizontalMove = 0f;
 
     bool jump = false;
+    
     bool crouch = false;
 
     // Update is called once per frame
@@ -31,6 +32,6 @@ public class ChickFollowMovement : MonoBehaviour
     }
 
     void FixedUpdate() {
-        controller.Move(horizontalMove * Time.fixedDeltaTime, false, false);
+        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
     }
 }

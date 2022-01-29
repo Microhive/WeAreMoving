@@ -6,17 +6,17 @@ using UnityEngine;
      public float dampTime = 0.15f;
      private Vector3 velocity = Vector3.zero;
      public Transform target;
-     public Camera camera;
+     public Camera cameraObject;
  
      // Update is called once per frame
      void Update () 
      {
-         if (target && camera)
+         if (target)
          {
-             Vector3 point = camera.WorldToViewportPoint(target.position);
-             Vector3 delta = target.position - camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, point.z));
-             Vector3 destination = camera.transform.position + delta;
-             camera.transform.position = Vector3.SmoothDamp(camera.transform.position, destination, ref velocity, dampTime);
+             Vector3 point = cameraObject.WorldToViewportPoint(target.position);
+             Vector3 delta = target.position - cameraObject.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, point.z));
+             Vector3 destination = cameraObject.transform.position + delta;
+             cameraObject.transform.position = Vector3.SmoothDamp(cameraObject.transform.position, destination, ref velocity, dampTime);
          }
      
      }
