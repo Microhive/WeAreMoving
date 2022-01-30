@@ -3,6 +3,7 @@ using UnityEngine;
 public class FoxController : MonoBehaviour
 {
     public CharacterController2D controller;
+    
 
     public float runSpeed = 40f;
 
