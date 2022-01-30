@@ -10,6 +10,8 @@ public class DayNightCycle : MonoBehaviour
 
     public Light2D GlobalLight;
 
+    public Color color;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,7 @@ public class DayNightCycle : MonoBehaviour
     {
         float rotation = sun.transform.rotation.z;
 
-        var lerpedColor = Color.Lerp(Color.white, Color.black, Mathf.PingPong(rotation, 1));
+        var lerpedColor = Color.Lerp(Color.white, color, Mathf.PingPong(rotation, 1));
 
         // if (rotation < 180 && rotation > 90) {
         //     light.color = new Color(1f, 0f, 0f, 1f);
