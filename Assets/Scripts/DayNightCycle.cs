@@ -22,29 +22,7 @@ public class DayNightCycle : MonoBehaviour
     void Update()
     {
         float rotation = sun.transform.rotation.z;
-
         var lerpedColor = Color.Lerp(Color.white, color, Mathf.PingPong(rotation, 1));
-
-        // if (rotation < 180 && rotation > 90) {
-        //     light.color = new Color(1f, 0f, 0f, 1f);
-        // }
-        // else 
-        // {
-        //     light.color = new Color(1f, 1f, 1f, 1f);
-        // }
-        // }
-        // // when sun moves from 180-90 it is reddish
-        // light.color = new Color(1f, 0f, 0f, 1f);
-
-        // // when sun moves from 90-0 it is white
-        // light.color = new Color(1f, 1f, 1f, 1f);
-
-        // // when sun moves from 360-270 it is reddish
-        // light.color = new Color(1f, 0f, 0f, 1f);
-
-        // // when sun moves from 270-180 it is blue
-        // light.color = new Color(0f, 0f, 1f, 1f);
-
         GlobalLight.color = lerpedColor;
     }
 }

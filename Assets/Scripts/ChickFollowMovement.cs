@@ -23,15 +23,20 @@ public class ChickFollowMovement : MonoBehaviour
     {
         float distance = follow.transform.position.x - gameObject.transform.position.x;
 
+        if (Input.GetButtonDown("Jump")) 
+        {
+            jump = true;
+        }
+
         if(Mathf.Abs(distance) > distanceToNext) {
             horizontalMove = Mathf.Clamp(distance, -1, 1) * runSpeed;
         } else {
             horizontalMove = 0f;
         }
-
     }
 
     void FixedUpdate() {
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
+        jump = false;
     }
 }
